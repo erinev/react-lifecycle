@@ -80,7 +80,8 @@ class Vaikas extends React.Component {
         <button type="button" onClick={ this.incrementCounter }>Inc Vaikas</button>
         <button type="button" onClick={ this.decrementCounter }>Dec Vaikas</button>
 
-        { this.props.componentNameToRemove !== 'Anukas' && <Anukas componentNameToRemove = { this.props.componentNameToRemove } tevasCounter={ this.props.tevasCounter } vaikasCounter={ this.state.counter } /> }
+        { this.props.componentNameToRemove !== 'Anukas' &&
+        <Anukas componentNameToRemove = { this.props.componentNameToRemove } tevasCounter={ this.props.tevasCounter } vaikasCounter={ this.state.counter } /> }
       </div>
     );
   }

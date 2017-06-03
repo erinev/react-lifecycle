@@ -77,7 +77,8 @@ class Tevas extends React.Component {
         <button type="button" onClick={ this.incrementCounter }>Inc Tevas</button>
         <button type="button" onClick={ this.decrementCounter }>Dec Tevas</button>
 
-        { this.props.componentNameToRemove !== 'Vaikas' && <Vaikas componentNameToRemove = { this.props.componentNameToRemove } tevasCounter = { this.state.counter } /> }
+        { this.props.componentNameToRemove !== 'Vaikas' &&
+        <Vaikas componentNameToRemove = { this.props.componentNameToRemove } tevasCounter = { this.state.counter } /> }
       </div>
     );
   }

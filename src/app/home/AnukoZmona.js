@@ -68,7 +68,7 @@ class AnukoZmona extends React.Component {
     return (
       <div>
         <h4>AnukoZmona</h4>
-        <p>Vaikas counter = { this.props.vaikasCounter } | Anukas counter = { this.props.anukasCounter } | AnukoZmona counter = { this.state.counter }</p>
+        <p>Tevas counter = { this.props.tevasCounter } | Vaikas counter = { this.props.vaikasCounter } | Anukas counter = { this.props.anukasCounter } | AnukoZmona counter = { this.state.counter }</p>
         <button type="button" onClick={ this.incrementCounter }>Inc AnukoZmona</button>
         <button type="button" onClick={ this.decrementCounter }>Dec AnukoZmona</button>
       </div>
@@ -77,6 +77,7 @@ class AnukoZmona extends React.Component {
 }
 
 AnukoZmona.propTypes = {
+  tevasCounter: PropTypes.number.isRequired,
   vaikasCounter: PropTypes.number.isRequired,
   anukasCounter: PropTypes.number.isRequired
 };

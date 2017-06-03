@@ -79,7 +79,8 @@ class Anukas extends React.Component {
         <p>Tevas counter = { this.props.tevasCounter } | Vaikas counter = { this.props.vaikasCounter } | Anukas counter = { this.state.counter }</p>
         <button type="button" onClick={ this.incrementCounter }>Inc Anukas</button>
         <button type="button" onClick={ this.decrementCounter }>Dec Anukas</button>
-        { this.props.componentNameToRemove !== 'AnukoZmona' && <AnukoZmona vaikasCounter={ this.props.vaikasCounter } anukasCounter={ this.state.counter } /> }
+        { this.props.componentNameToRemove !== 'AnukoZmona' &&
+        <AnukoZmona tevasCounter={ this.props.tevasCounter } vaikasCounter={ this.props.vaikasCounter } anukasCounter={ this.state.counter } /> }
       </div>
     );
   }
