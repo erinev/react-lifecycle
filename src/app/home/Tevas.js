@@ -29,7 +29,7 @@ class Tevas extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
     let shouldComponentUpdate = true;
 
-    if (nextState.counter < 0) {
+    if (this.props.componentNameToRemove === nextProps.componentNameToRemove && this.state.counter < 0) {
       shouldComponentUpdate = false;
       this.setState({
         counter: 0
