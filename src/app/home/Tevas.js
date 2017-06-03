@@ -1,4 +1,5 @@
 import React from 'react';
+import Vaikas from './Vaikas';
 
 class Tevas extends React.Component {
   constructor(props, context) {
@@ -19,7 +20,6 @@ class Tevas extends React.Component {
 
   componentDidMount() {
     console.log('%c Tevas -> componentDidMount ', 'background: #222; color: #bada55');
-    console.log('\n');
   }
 
   componentWillReceiveProps(nextProps) {
@@ -29,9 +29,12 @@ class Tevas extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
     let shouldComponentUpdate = true;
 
-    /*if (nextState.counter < 0) {
+    if (nextState.counter < 0) {
       shouldComponentUpdate = false;
-    }*/
+      this.setState({
+        counter: 0
+      });
+    }
 
     console.log(`%c Tevas -> shouldComponentUpdate: ${shouldComponentUpdate} `, 'background: #222; color: #bada55');
 
@@ -44,7 +47,6 @@ class Tevas extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     console.log('%c Tevas -> componentDidUpdate ', 'background: #222; color: #bada55');
-    console.log('\n');
   }
 
   componentWillUnmount() {
@@ -65,13 +67,17 @@ class Tevas extends React.Component {
 
   render() {
     console.log('%c Tevas -> render ', 'background: #222; color: #bada55');
+    console.log('\n');
 
     return (
       <div>
         <hr/>
-        <h4>Tevas counter = { this.state.counter }</h4>
+        <h4>Tevas</h4>
+        <p>Tevas counter = { this.state.counter }</p>
         <button type="button" onClick={ this.incrementCounter }>Inc Tevas</button>
         <button type="button" onClick={ this.decrementCounter }>Dec Tevas</button>
+
+        <Vaikas tevasCounter = { this.state.counter } />
       </div>
     );
   }

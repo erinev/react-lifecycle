@@ -4,6 +4,8 @@
   min-width: 550px;
   max-width: 850px;
   margin: 0 auto;
+  background-color: lightblue;
+  padding: 20px;
 }
 
 a.active {
