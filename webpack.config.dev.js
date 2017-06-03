@@ -6,8 +6,8 @@ export default {
   devtool: 'inline-source-map',
   noInfo: false,
   entry: [
-    'eventsource-polyfill', // necessary for hot reloading with IE
-    'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
+    /*'eventsource-polyfill', // necessary for hot reloading with IE*/
+    /*'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.*/
     path.resolve(__dirname, 'src/index')
   ],
   target: 'web',
@@ -20,8 +20,8 @@ export default {
     contentBase: path.resolve(__dirname, 'src')
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    /*new webpack.HotModuleReplacementPlugin(),*/
+    /*new webpack.NoErrorsPlugin()*/
   ],
   module: {
     loaders: [
