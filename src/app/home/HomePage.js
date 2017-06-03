@@ -1,13 +1,13 @@
 import React from 'react';
-import Container from './Container';
+import { Link } from 'react-router';
+import Tevas from './Tevas';
 
 class HomePage extends React.Component {
   render() {
     return (
-      <div className="jumbotron">
-        <h2>React lifecycle</h2>
-        <hr/>
-        <Container />
+      <div>
+        <h3>React lifecycle. Go back to <Link to="/Home">Home</Link></h3>
+        <Tevas />
       </div>
     );
   }
