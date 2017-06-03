@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Vaikas from './Vaikas';
 
 class Tevas extends React.Component {
@@ -77,10 +77,14 @@ class Tevas extends React.Component {
         <button type="button" onClick={ this.incrementCounter }>Inc Tevas</button>
         <button type="button" onClick={ this.decrementCounter }>Dec Tevas</button>
 
-        <Vaikas tevasCounter = { this.state.counter } />
+        { this.props.componentNameToRemove !== 'Vaikas' && <Vaikas componentNameToRemove = { this.props.componentNameToRemove } tevasCounter = { this.state.counter } /> }
       </div>
     );
   }
 }
+
+Tevas.propTypes = {
+  componentNameToRemove: PropTypes.string.isRequired
+};
 
 export default Tevas;

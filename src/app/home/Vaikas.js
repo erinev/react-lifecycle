@@ -29,7 +29,9 @@ class Vaikas extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
     let shouldComponentUpdate = false;
 
-    if (this.props.tevasCounter !== nextProps.tevasCounter || this.state.counter !== nextState.counter) {
+    if (this.props.componentNameToRemove !== nextProps.componentNameToRemove ||
+      this.props.tevasCounter !== nextProps.tevasCounter ||
+      this.state.counter !== nextState.counter) {
       shouldComponentUpdate = true;
     }
 
@@ -66,6 +68,10 @@ class Vaikas extends React.Component {
     console.log('%c Vaikas -> render ', 'background: #222; color: #FF5733');
     console.log('\n');
 
+    if (this.props.componentNameToRemove === 'Vaikas') {
+      return null;
+    }
+
     return (
       <div>
         <hr/>
@@ -74,13 +80,14 @@ class Vaikas extends React.Component {
         <button type="button" onClick={ this.incrementCounter }>Inc Vaikas</button>
         <button type="button" onClick={ this.decrementCounter }>Dec Vaikas</button>
 
-        <Anukas tevasCounter={ this.props.tevasCounter } vaikasCounter={ this.state.counter } />
+        { this.props.componentNameToRemove !== 'Anukas' && <Anukas componentNameToRemove = { this.props.componentNameToRemove } tevasCounter={ this.props.tevasCounter } vaikasCounter={ this.state.counter } /> }
       </div>
     );
   }
 }
 
 Vaikas.propTypes = {
+  componentNameToRemove: PropTypes.string.isRequired,
   tevasCounter: PropTypes.number.isRequired
 };
 

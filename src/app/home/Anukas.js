@@ -29,7 +29,9 @@ class Anukas extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
     let shouldComponentUpdate = false;
 
-    if (this.props.vaikasCounter !== nextProps.vaikasCounter || this.state.counter !== nextState.counter) {
+    if (this.props.componentNameToRemove !== nextProps.componentNameToRemove ||
+      this.props.vaikasCounter !== nextProps.vaikasCounter ||
+      this.state.counter !== nextState.counter) {
       shouldComponentUpdate = true;
     }
 
@@ -66,6 +68,10 @@ class Anukas extends React.Component {
     console.log('%c Anukas -> render ', 'background: #222; color: #E3CF20');
     console.log('\n');
 
+    if (this.props.componentNameToRemove === 'Anukas') {
+      return null;
+    }
+
     return (
       <div>
         <hr/>
@@ -73,13 +79,14 @@ class Anukas extends React.Component {
         <p>Tevas counter = { this.props.tevasCounter } | Vaikas counter = { this.props.vaikasCounter } | Anukas counter = { this.state.counter }</p>
         <button type="button" onClick={ this.incrementCounter }>Inc Anukas</button>
         <button type="button" onClick={ this.decrementCounter }>Dec Anukas</button>
-        <AnukoZmona vaikasCounter={ this.props.vaikasCounter } anukasCounter={ this.state.counter } />
+        { this.props.componentNameToRemove !== 'AnukoZmona' && <AnukoZmona vaikasCounter={ this.props.vaikasCounter } anukasCounter={ this.state.counter } /> }
       </div>
     );
   }
 }
 
 Anukas.propTypes = {
+  componentNameToRemove: PropTypes.string.isRequired,
   tevasCounter: PropTypes.number.isRequired,
   vaikasCounter: PropTypes.number.isRequired
 };
