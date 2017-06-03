@@ -1,11 +1,13 @@
 import React from 'react';
+import Container from './Container';
 
 class HomePage extends React.Component {
   render() {
     return (
       <div className="jumbotron">
-        <h1>React lifecycle</h1>
-        <p>Learning react lifecycle with joy.</p>
+        <h2>React lifecycle</h2>
+        <hr/>
+        <Container />
       </div>
     );
   }
