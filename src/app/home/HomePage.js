@@ -18,7 +18,6 @@ class HomePage extends React.Component {
     this.setState({
       componentNameToRemove: event.target.getAttribute('data-component-name')
     });
-    console.log(event.target.getAttribute('data-component-name'));
   }
 
   displayAllComponents() {
