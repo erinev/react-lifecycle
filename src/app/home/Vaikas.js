@@ -65,6 +65,8 @@ class Vaikas extends React.Component {
   }
 
   render() {
+    // return null or false to prevent element to be rendered (doesn't remove from DOM if element is already mounted)
+
     console.log('%c Vaikas -> render ', 'background: #222; color: #FF5733');
     console.log('\n');
 
